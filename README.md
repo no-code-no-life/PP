@@ -4,9 +4,9 @@
 Встановлення **Pyenv**.
 1) **apt update -y**    запустив з правами root для оновлення всіх системних компонент.
 
-2) **apt install -y make build-essential libssl-dev zlib1g-dev  \**
-     **libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \**
-     **libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \**
+2)    **apt install -y make build-essential libssl-dev zlib1g-dev  \
+     **libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+     **libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
      **git**          встановлення залежностей pyenv
 
 3) **git clone https://github.com/pyenv/pyenv.git ~/.pyenv** 
@@ -25,7 +25,7 @@
 
 
 
-###Встановлення **Venv**
+Встановлення **Venv
 1) **sudo apt install -y python3-pip**    # встановлення необхідних пакетів
 
 2) **sudo apt install -y python3-venv**  # встановлення самого venv
@@ -37,7 +37,7 @@
 
 
 
-###Встановлення **Flask** i **Gunicorn**
+Встановлення **Flask** i **Gunicorn**
 1) 
   Можна встановити вручну:
     pip install flask
