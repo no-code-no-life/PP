@@ -21,14 +21,14 @@
 
 5) **pyenv install --list
   з'явився список версій Python , серед якого обираю Python 3.6.0
-  **pyenv install python 3.6.0
+  **pyenv install python 3.6.0**
 
 6) pyenv global 3.6.0 #глобально змінюю версію Python
 
 
 
 
-Встановлення **venv.
+Встановлення   **venv**.
 1) sudo apt install -y python3-pip**    # встановлення необхідних пакетів
 
 2) **sudo apt install -y python3-venv**  # встановлення самого venv
