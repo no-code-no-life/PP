@@ -12,13 +12,16 @@
 3) **git clone https://github.com/pyenv/pyenv.git ~/.pyenv** 
   клоную гіт репозиторій для встановлення  останньої версії pyenv
 4)**echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+
    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+   
    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc**
+   
    #прописую стандартний шлях до pyenv
 
-5) pyenv install --list
- з'явився список версій Python , серед якого обираю Python 3.6.0
-  pyenv install python 3.6.0
+5) **pyenv install --list
+  з'явився список версій Python , серед якого обираю Python 3.6.0
+  **pyenv install python 3.6.0
 
 6) pyenv global 3.6.0 #глобально змінюю версію Python
 
