@@ -1,19 +1,19 @@
 Згідно свого варіанту мені треба було встановити Python 3.6 і Venv.
 Встановлювавлось все на ОС Linux Ubuntu.
 
-###Встановлення **Pyenv**.
-1) apt update -y    запустив з правами root для оновлення всіх системних компонент.
+Встановлення **Pyenv**.
+1) **apt update -y**    запустив з правами root для оновлення всіх системних компонент.
 
-2) apt install -y make build-essential libssl-dev zlib1g-dev \
-     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev\
-     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl\
-     git        встановлення залежностей pyenv
+2) **apt install -y make build-essential libssl-dev zlib1g-dev  \**
+     **libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \**
+     **libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \**
+     **git**          встановлення залежностей pyenv
 
-3) git clone https://github.com/pyenv/pyenv.git ~/.pyenv 
+3) **git clone https://github.com/pyenv/pyenv.git ~/.pyenv** 
   клоную гіт репозиторій для встановлення  останньої версії pyenv
-4) echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-   echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-   echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+4) **echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+   **echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+   **echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
    #прописую стандартний шлях до pyenv
 
 5) pyenv install --list
@@ -26,13 +26,13 @@
 
 
 ###Встановлення **Venv**
-1) sudo apt install -y python3-pip    # встановлення необхідних пакетів
+1) **sudo apt install -y python3-pip**    # встановлення необхідних пакетів
 
-2) sudo apt install -y python3-venv  # встановлення самого venv
+2) **sudo apt install -y python3-venv**  # встановлення самого venv
 
-3) python3 -m venv test_env  
-  source test_env/bin/activate
-    # створення віртуального середовища і його активація 
+3)   **python3 -m venv test_env  
+     **source test_env/bin/activate
+     створення віртуального середовища і його активація 
 
 
 
@@ -86,7 +86,7 @@
               app.run()
 
   Запускати можна стандартно, а можна через команду 
-   gunicorn --bind 0.0.0.0:5000 main:app
+   **gunicorn --bind 0.0.0.0:5000 main:app
 
   Для перевірки чи є відгук на запит в терміналі можна використати 
    curl -v -XGET http://localhost:5000/api/v1/hello-world-3
@@ -94,8 +94,8 @@
   Якщо відповідь по запиту  200 , то сторінка існує, і може бути відкритою.
 
 
-###Закидую все у гітхаб.
-git init
+Закидую все у гітхаб.
+**git init
 git add .
 git commit -m "first_lab_commit"
 git remote add origin https://github.com/no-code-no-life/PP
