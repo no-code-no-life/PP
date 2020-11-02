@@ -28,7 +28,7 @@
 
 
 
-Встановлення **Venv
+Встановлення **Venv.
 1) **sudo apt install -y python3-pip**    # встановлення необхідних пакетів
 
 2) **sudo apt install -y python3-venv**  # встановлення самого venv
