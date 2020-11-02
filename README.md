@@ -29,9 +29,9 @@
 
 
 Встановлення   **venv**.
-1) sudo apt install -y python3-pip**    # встановлення необхідних пакетів
+1) **sudo apt install -y python3-pip**       встановлення необхідних пакетів
 
-2) **sudo apt install -y python3-venv**  # встановлення самого venv
+2) **sudo apt install -y python3-venv**          встановлення самого venv
 
 3)   **python3 -m venv test_env  
      **source test_env/bin/activate
@@ -44,8 +44,8 @@
 
 
 1)   Можна встановити вручну:
-    pip install flask
-    pip install gunicorn
+    **pip install flask
+    pip install gunicorn**
 
   або:
     Створити файл requirements.txt 
