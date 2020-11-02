@@ -4,16 +4,16 @@
 Встановлення **Pyenv**.
 1) **apt update -y**    запустив з правами root для оновлення всіх системних компонент.
 
-2)    **apt install -y make build-essential libssl-dev zlib1g-dev  \
-     **libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-     **libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
-     **git**          встановлення залежностей pyenv
+2)  **apt install -y make build-essential libssl-dev zlib1g-dev  \
+     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
+     git**          встановлення залежностей pyenv
 
 3) **git clone https://github.com/pyenv/pyenv.git ~/.pyenv** 
   клоную гіт репозиторій для встановлення  останньої версії pyenv
-4) **echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-   **echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-   **echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+4)**echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+   echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+   echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc**
    #прописую стандартний шлях до pyenv
 
 5) pyenv install --list
