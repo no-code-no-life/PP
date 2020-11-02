@@ -1,7 +1,7 @@
 Згідно свого варіанту мені треба було встановити Python 3.6 і Venv.
 Встановлювавлось все на ОС Linux Ubuntu.
 
-              ###Встановлення Pyenv.
+              ###Встановлення **Pyenv**.
               1) apt update -y    запустив з правами root для оновлення всіх системних компонент.
               
               2) apt install -y make build-essential libssl-dev zlib1g-dev \
@@ -25,7 +25,7 @@
               
               
               
-              ###Встановлення Venv
+              ###Встановлення **Venv**
               1) sudo apt install -y python3-pip    # встановлення необхідних пакетів
               
               2) sudo apt install -y python3-venv  # встановлення самого venv
@@ -37,7 +37,7 @@
               
               
               
-              ###Встановлення Flask i Gunicorn
+              ###Встановлення **Flask** i **Gunicorn**
               1) 
                 Можна встановити вручну:
                   pip install flask
