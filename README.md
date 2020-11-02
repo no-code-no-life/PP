@@ -31,10 +31,10 @@
 Встановлення   **venv**.
 1) **sudo apt install -y python3-pip**       встановлення необхідних пакетів
 
-2) **sudo apt install -y python3-venv**          встановлення самого venv
+2) **sudo apt install -y python3-venv**        встановлення самого venv
 
-3)   **python3 -m venv test_env  
-     **source test_env/bin/activate
+3)   **python3 -m venv test_env**  
+     **source test_env/bin/activate**
      створення віртуального середовища і його активація 
 
 
