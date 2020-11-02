@@ -91,9 +91,11 @@
               app.run()
 
   Запускати можна стандартно, а можна через команду 
+  
    **gunicorn --bind 0.0.0.0:5000 main:app
 
   Для перевірки чи є відгук на запит в терміналі можна використати 
+  
    curl -v -XGET http://localhost:5000/api/v1/hello-world-3
 
   Якщо відповідь по запиту  200 , то сторінка існує, і може бути відкритою.
@@ -101,7 +103,12 @@
 
 Закидую все у гітхаб.
 **git init
+
 git add .
+
 git commit -m "first_lab_commit"
+
 git remote add origin https://github.com/no-code-no-life/PP
+
 git push -u origin master
+
