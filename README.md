@@ -41,8 +41,9 @@
 
 
 Встановлення **Flask** i **Gunicorn**
-1) 
-  Можна встановити вручну:
+
+
+1)   Можна встановити вручну:
     pip install flask
     pip install gunicorn
 
@@ -62,7 +63,8 @@
 
 
 
-
+     
+     
 
 Створення самого API у **Pycharm**
 
