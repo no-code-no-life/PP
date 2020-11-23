@@ -1,0 +1,295 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/no-code-no-life/credit/1.0.0
+info:
+  description: Pavlichko Vlad CS-214 LAB_2 
+  version: "1.0.0"
+  title: Crediting system
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /user:
+    post:
+      tags:
+        - User 
+      description: 'Information about user'
+      summary: 'Create new user'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        '201':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '400':
+          description: Invalid body supplied
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  property_name:
+                    type: string
+                nullable: false
+        '409':
+          description: User with such email already exists
+      security:
+      - cinema_auth:
+        - write:users
+  /user/{userId}:
+    get:
+      tags:
+      - User
+      description: Get user data
+      summary: Get user by id
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '400':
+          description: Invalid Id supplied
+        '404':
+          description: User not found
+      security:
+      - cinema_auth:
+        - read:users
+  /user/{userId}/credit:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+      - Credit
+      description: Get credit
+      summary: Take credit by user with cusom ID
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credit'
+        '400':
+          description: Invalid Id supplied
+        '404':
+          description: User not found
+
+    get:
+      tags:
+        - Credit
+      description: Get user data
+      summary: Get credits by user ID
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credit'
+        '400':
+          description: Invalid Id supplied
+        '404':
+          description: User not found
+      security:
+      - cinema_auth:
+        - read:users
+  /user/{userId}/{creditId}:
+    put:
+      tags:
+      - Transaction
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema: 
+          type: string
+          format: uuid
+      - name: creditId
+        in: path
+        required: true
+        schema: 
+          type: string
+          format: uuid
+      summary: Give in money for user's credit
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/transaction'
+        '400':
+          description: Invalid Id supplied
+        '404':
+          description: User not found
+      security:
+      - cinema_auth:
+        - read:users
+  /user/{userId}/{creditId}/{transactionId}:
+    get:
+      tags:
+      - Transaction
+      summary: Transaction's info
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema: 
+          type: string
+          format: uuid
+      - name: creditId
+        in: path
+        required: true
+        schema: 
+          type: string
+          format: uuid
+      - name: transactionId
+        in: path
+        required: true
+        schema: 
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/transaction'
+        '400':
+          description: Invalid Id supplied
+        '404':
+          description: User not found
+      security:
+      - cinema_auth:
+        - read:users
+  /bank:
+    get:
+      tags:
+      - Bank
+      summary: Check bank's available money and percent
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bankInfo'
+        '400':
+          description: Invalid bank
+        '404':
+          description: Bank not found
+      security:
+      - cinema_auth:
+        - read:users
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: f3c6c382-314c-457e-9ff3-a54587fb0288
+        firstName:
+          type: string
+         # example: Joe
+        
+        lastName:
+          type: string
+        #  example: Renegade
+        email:
+          type: string
+          example: nulp@gmail.com
+        phone_number:
+          type: string
+          example: '+38088355351'
+        money_amount:
+          type: integer
+          format: int32
+          example: 600
+      nullable: false
+    
+    credit:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 37b76133-5c27-46d5-af02-1160be27c495        
+        start_sum:
+          type: integer
+          format: int64
+          example: 500
+        current_sum:
+          type: integer
+          format: int64
+          example: 999
+        start_date:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        end_date:
+          type: string
+          format: date-time
+          example: '2017-08-29T09:15:33.001Z'
+          
+    transaction:
+      type: array
+      items: 
+        type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          credit:
+            $ref: '#/components/schemas/credit'
+          sum:
+            type: integer
+            format: int64
+            
+        
+    bankInfo:
+      type: object
+      properties:
+        government_money:
+          type: integer
+          format: int64
+          example: 517000
+        percent:
+          type: number
+          example: 1.3
+          
+  securitySchemes:
+    cinema_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://petstore.swagger.io/oauth/dialog
+          scopes:
+            write:schedules: modify schedules in your cinema
+            write:users: modify user info
+            read:users: read user info
