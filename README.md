@@ -107,4 +107,4 @@
      git add .
      git commit -m "first_lab_commit"
      git remote add origin https://github.com/no-code-no-life/PP
-     git push -u origin maste
+     git push -u origin master
